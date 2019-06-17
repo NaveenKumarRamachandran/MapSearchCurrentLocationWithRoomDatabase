@@ -15,14 +15,15 @@ Room DataBase
 
 Gradle libraries for google map 
 
-implementation 'com.google.android.gms:play-services-maps:16.1.0'
+	implementation 'com.google.android.gms:play-services-maps:16.1.0'
 
-implementation 'com.google.android.gms:play-services-places:16.0.0'
+	implementation 'com.google.android.gms:play-services-places:16.0.0'
 
-implementation 'com.google.android.libraries.places:places:1.1.0'
+	implementation 'com.google.android.libraries.places:places:1.1.0'
 
  // Room components
-    implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
+   	
+	implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
     
     kapt "android.arch.persistence.room:compiler:$rootProject.roomVersion"
     
