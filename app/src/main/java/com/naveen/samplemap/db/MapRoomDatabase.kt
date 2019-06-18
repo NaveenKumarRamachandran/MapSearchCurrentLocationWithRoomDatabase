@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [MapModel::class], version = 1, exportSchema = false)
+@Database(entities = [MapModel::class], version = 2, exportSchema = false)
 abstract class MapRoomDatabase : RoomDatabase() {
     abstract fun mapDao(): MapDao
 

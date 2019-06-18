@@ -20,6 +20,7 @@ private var context: Context
 
     inner class MapViewHolder(itemView: View, var context: Context) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.map_search_name)
+        val type:TextView=itemView.findViewById(R.id.his_type)
         val description: TextView = itemView.findViewById(R.id.lat_lon)
         val card: CardView = itemView.findViewById(R.id.card_list)
 
@@ -32,9 +33,10 @@ private var context: Context
     }
 
     override fun onBindViewHolder(holder: MapViewHolder, position: Int) {
-        val current = list?.get(position)
-        holder.name.text = ""+current?.name
-        holder.description.text ="latitude :"+current?.latitude+"  longitude :"+current?.longitude
+        val current = list.get(position)
+        holder.name.text = ""+current.name
+        holder.description.text ="latitude :"+current.latitude+"  longitude :"+current.longitude
+        holder.type.text=current.type+""
     }
 
     internal fun setMapList(list:  List<MapModel>) {

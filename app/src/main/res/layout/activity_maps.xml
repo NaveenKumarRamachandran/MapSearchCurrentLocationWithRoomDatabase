@@ -1,57 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MapsActivity" >
-    <LinearLayout
+    android:orientation="vertical"
+    tools:context=".activities.MapsActivity">
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_margin="1dp"
+        >
 
-        <RelativeLayout
+        <fragment
+            android:id="@+id/autocomplete_fragment"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:elevation="10dp"
-            android:background="@drawable/white_border"
-            android:id="@+id/relLayout1">
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/ic_magnify"
-                android:layout_centerVertical="true"
-                android:onClick="searchLocation"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_search_black_24dp"/>
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/ic_magnify"
-                android:layout_centerVertical="true"
-                android:textSize="15sp"
-                android:textColor="#000"
-                android:id="@+id/editText"
-                android:background="@null"
-                android:hint="Enter Address, City or Zip Code"
-                android:imeOptions="actionSearch"/>
-
-
-        </RelativeLayout>
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:onClick="searchLocation"
-            android:text="Search" />
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/relLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/white_border"
+                android:elevation="10dp">
 
-</fragment>
+                <ImageView
+                    android:id="@+id/ic_magnify"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="searchLocation"
+                    android:src="@drawable/ic_search_black_24dp" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ic_magnify"
+                    android:background="@null"
+                    android:hint="Enter Address, City or Zip Code"
+                    android:imeOptions="actionSearch"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:onClick="searchLocation"
+                android:text="Search" />
+
+        </LinearLayout>
+
+    </fragment>
+</LinearLayout>

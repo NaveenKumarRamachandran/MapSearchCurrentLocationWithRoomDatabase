@@ -18,6 +18,9 @@ class MapModel {
     @ColumnInfo(name="founded")
     var boolean: Boolean = false
 
+    @ColumnInfo(name="type")
+    lateinit var type: String
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Long? = null
