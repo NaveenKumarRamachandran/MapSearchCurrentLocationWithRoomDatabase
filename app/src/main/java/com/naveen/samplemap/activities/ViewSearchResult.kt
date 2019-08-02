@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.naveen.samplemap.R
 import com.naveen.samplemap.adapter.MapAdapter
@@ -29,7 +30,7 @@ class ViewSearchResult : AppCompatActivity() {
 
         val girdLayoutManager = GridLayoutManager(this.application, 1)
         recyclerView=findViewById(R.id.map_recycler)
-        recyclerView.layoutManager = girdLayoutManager
+        recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MapAdapter(this)
         recyclerView.adapter = adapter
         mapViewModel.liveData.observe(this,

@@ -32,4 +32,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+    public void liveTracking(View v){
+        Intent i=new Intent(this, LiveTracking.class);
+
+        startActivity(i);
+
+    }
 }

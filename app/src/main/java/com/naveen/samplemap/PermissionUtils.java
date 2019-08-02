@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.widget.Toast;
 
+import com.naveen.samplemap.activities.LiveTracking;
 import com.naveen.samplemap.activities.MapsActivity;
 
 public abstract class PermissionUtils {
@@ -25,7 +26,20 @@ public static void requestPermission(MapsActivity activity, int requestId,
         }
         }
 
-/**
+    public static void requestPermission2(LiveTracking activity, int requestId,
+                                          String permission, boolean finishActivity) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
+            // Display a dialog with rationale.
+            PermissionUtils.RationaleDialog.newInstance(requestId, finishActivity)
+                    .show(activity.getSupportFragmentManager(), "dialog");
+        } else {
+            // Location permission has not been granted yet, request it.
+            ActivityCompat.requestPermissions(activity, new String[]{permission}, requestId);
+
+        }
+    }
+
+        /**
  * Checks if the result contains a {@link PackageManager#PERMISSION_GRANTED} result for a
  * permission from a runtime permissions request.
  *

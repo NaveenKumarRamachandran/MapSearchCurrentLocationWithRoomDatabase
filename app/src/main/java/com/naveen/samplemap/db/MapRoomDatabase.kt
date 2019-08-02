@@ -36,9 +36,6 @@ abstract class MapRoomDatabase : RoomDatabase() {
                 instance
 
             }
-
-
-
         }
         private class MapCallback(private val scope: CoroutineScope
         ) : Callback() {
